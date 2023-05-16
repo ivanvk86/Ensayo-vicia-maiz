@@ -1,0 +1,336 @@
+---
+title: "Evaluación de diferentes variables de manejo previas al cultivo de maíz tardío (*Zea mays*) que incluyen el uso de *Vicia villosa* como cultivo de servicio."
+author: "Ing. agr. Emanuel Ceaglio, Ing. agr. Ivan Van Kruijssen"
+output:
+  pdf_document: default
+  word_document: default
+---
+
+## Resumen
+Haciendo foco en las principales cuestiones que actualmente se le presentan a un productor agrícola ante la posibilidad de incorporar una tecnología, en este trabajo se evalúan variables que tienen un impacto directo e indirecto sobre el potencial y la estabilidad del rendimiento de un cultivo, e indicadores económicos y financieros de diferentes prácticas de manejo de un cultivo de servicio previo a la siembra de maíz (*Zea mays*).					
+Se evalúan cómo distintas fechas de secado de la vicia se relacionan con el agua útil disponible para el cultivo de maíz e indirectamente con su rendimiento. Al mismo tiempo se mide la producción de materia seca en cada fecha de secado y su relación con el agua útil y el rendimiento del maíz. Además se evalúan las interrelaciones del efecto de dos antecesores distintos (soja y maíz) con las variables ya mencionadas y con dos niveles de fertilización nitrogenada.
+Se obtienen conclusiones con diferentes niveles de certeza estadística que se podrán considerar para la toma de decisiones en contextos complejos como lo son los ecosistemas agrícolas. 
+
+**Palabras clave:** 
+*Vicia villosa*, cultivo de servicio, maíz, fecha de secado, fertilización, materia seca, agua útil
+
+## Introducción
+El uso de una tecnología relativamente nueva y donde existen todavía áreas grises, pero con alto potencial, como lo son los cultivos de servicio hace necesaria la investigación de numerosas variables y combinación de las mismas para solidificar la implementación de esta práctica minimizando las incertidumbres propias de las etapas iniciales del desarrollo de cualquier tecnología.
+El maíz, y especialmente el maíz tardío actualmente es un cultivo en continuo crecimiento en Argentina tanto en cuanto a superficie como a niveles de producción. (Gráfico 1) .			
+
+```{r  , echo=FALSE, comment=NA, fig.dim=c(6,3.5), fig.align='center', fig.cap= "Superficie de maíz sembrada por año en Argentina en millones de hectáreas."}
+año = factor(c(rep("2015",3.9),rep("2016",5.2),rep("2017",5.7),rep("2018",6.3),rep("2019",6.3)))
+tabla = table(año)
+plot(año, main = "Superficie de maíz sembrada por año", ylab = "Millones de ha", cex.lab = 0.8, cex.axis = 0.8)
+
+```
+
+La característica saliente del maíz tardío es la estabilidad de los rendimientos y es una de las causas del aumento de la superficie destinada a su cultivo. Por otra parte, la fecha de siembra en el mes de diciembre facilita la inclusión de un cultivo de servicio ya que permite flexibilizar las fechas de las labores de siembra y secado entre otras (que dependen muchas veces de condiciones meteorológicas y logísticas estrechas) permitiendo aumentar las probabilidades de logro los objetivos de los mismos.
+
+Entre otras, las funciones que se le pueden adjudicar a un cultivo de servicio se encuentran: el control de malezas, la incorporación de carbono al suelo con la incorporación de la mano de micro y mesofauna, la reducción de la erosión eólica e hídrica y de la lixiviación, el aporte de nitrógeno para al cultivo sucesor y la reducción de la compactación.
+
+## Metodología
+El ensayo se realizó en el campo experimental de la [Facultad de Ciencias Agrarias](https://fcagr.unr.edu.ar) de la Universidad Nacional de Rosario que se encuentra ubicada en la localidad de Zavalla, en la provincia de Santa Fe, Argentina 	(33º01´S; 60º53´O).
+El suelo es un Argiudol vértico perteneciente a la serie Roldán de la clasificación propuesta por *Soil Taxonomy* (horizonte superficial de 20 cm: 25% de arcilla; 2,3% de arena; 72,7% de limo). Las precipitaciones anuales del lugar son en promedio de 953 mm en los últimos 50 años, 924 los últimos 25 años y 881 los últimos 10 años, con una alta concentración en primavera, verano y otoño (860 mm). 
+La temperatura media es de 17 °C, la máxima promedio es de 33 °C en enero y la mínima media de 8 °C en julio.
+Las heladas son frecuentes en los meses de invierno, comenzando en promedio a principios del mes de junio y finalizando a principios de septiembre. El período libre de heladas por es de 275 días en promedio, con un desvío de 20 días.
+
+
+```{r , echo=FALSE,  comment=NA, fig.dim=c(6.5,3), fig.align='center', fig.cap="Promedio de precipitaciones (mm) de los últimos 50 años en Zavalla"}
+Mes = factor(c(rep("Jul", 24.39), rep("Ago", 32.18), rep("Sep", 46.19), rep("Oct", 103.95), rep("Nov", 101.79), rep("Dic", 117.67), rep("Ene", 115.68), rep("Feb", 114.82), rep("Mar", 116.86), rep("Abr", 98.15), rep("May", 53.44), rep("Jun", 27.97)), levels = c('Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'))
+
+barplot(table(Mes), xlab = "Mes", ylab = "Precipitaciones (mm)", ylim = c(0,120), cex.axis = 0.75, cex.names = 0.8, cex.lab = 0.8, main = "Precipitaciones promedio en Zavalla")
+```
+
+El trabajo se llevó a cabo durante la campaña 2019-2020.					Se presentaron dos antecesores distintos que fueron soja y maíz, sobre los cuales se sembró *Vicia villosa* preinoculada con *Bradyrhizobium leguminosarum* en el mes de mayo. Se sembraron 28 kg/ha de vicia a 0,19 m entre surcos, con 50 kg/ha de fosfato monoamónico como fertilizante arrancador.					Previamente a la siembra se realizaron análisis químicos y mediciones de agua útil hasta 1 metro de profundidad sobre ambos antecesores.					
+El ensayo se dividió en 3 bloques aleatorizados con 3 repeticiones por tratamiento.					Se eligieron 3 fechas de secado que fueron: primera y tercera semana de noviembre y primera semana de diciembre. El secado de la vicia se realizó con herbicidas (una aplicación de 2 $l/ha^-1$ de glifosato + 0,6 l $ha^-1$ de 2,4-d sal colina).
+En cada fecha de secado se midió el agua útil hasta 1 metro de profundidad y la materia seca de *Vicia villosa*.					
+La segunda semana de diciembre se sembraron 7,7 semillas por $m^2$ de maíz Brevant 22.6 PWU a 0,52 m entre surcos con 80 kg de fosfato monoamónico.En el estadio fenológico V3 del maíz se fertilizaron los tratamientos correspondientes con 150 kg de urea granulada (46 % N).					Luego de la madurez fisiológica se cosechó el maíz extrayendo una muestra compuesta de cada uno de los tratamientos para el cálculo de rendimiento. Se igualaron las muestras a humedad comercial (14 %).					
+Mediante la implementación de métodos estadísticos de regresión se evaluaron las distintas correlaciones entre las variables medidas. 
+
+
+
+### Distribución de precipitaciones:
+
+Mes            | Precipitaciones 
+---------------|--------------------
+Abril '19      |      61 mm
+Mayo '19       |      67 mm
+Junio '19      |      30 mm
+Julio '19      |       9 mm
+Agosto '19     |       3 mm
+Septiembre '19 |      24 mm
+Octubre '19    |      66 mm 
+Noviembre '19  |      74 mm
+Diciembre '19  |      85 mm
+Enero '20      |      46 mm
+Febrero '20    |      48 mm
+Marzo '20      |      88 mm
+
+![Secado vicia 6-11-19](../../../../HP/Pictures/Secado vicia 6-11-19.jpg){with=400, height=200}
+
+\newpage
+
+### Resultados
+
+
+Los costos de implantación y secado del cultivo de cobertura fueron de:
+
+Y los costos de producción del maíz:
+
+Maíz fertilizado:
+
+Maíz sin fertlizar con Urea:
+
+Se obtuvo un margen bruto de:
+
+Maíz fertilizado:
+
+Maíz sin fertlizar con Urea:
+
+Un lote apareado, con barbecho químico produjo un margen en maíz de primera de:
+
+Se realizó un análisis químico de suelo previo a la siembra de la vicia y se midieron 36,1 Kg de N de 0-60 cm sobre barbecho de soja y 17,6 Kg de N de 0-60 cm sobre barbecho de maíz.
+
+
+### Materia seca	
+
+
+Fecha            | MS promedio
+-----------------|--------------------
+6/11/19          |      7287 Kg/ha
+20/11/19         |      6833 Kg/ha
+9/12/19          |      7060 Kg/ha
+27/1/20          |      4813 Kg/ha
+27/2/20          |      3747 Kg/ha
+19/5/20          |      2447 Kg/ha
+
+```{r  , echo=FALSE, comment=NA, fig.align='center', comment= NA, fig.cap="Evolución del crecimiento y la degradación de la materia seca aérea de la vicia a partir de la primera fecha de secado."}
+FMS = c(0,14,33,82,113,194)
+KgMSSj = c(8093,8640,8367,5473,4327,2722)
+KgMSMz = c(6480,5027,5753,4153,3267,2171)
+par(mfrow = c(1,2))
+plot(FMS,KgMSSj, type = "s", xlab = "Días", ylab = "Kg MS vicia s/soja", cex.lab = 0.75, cex.axis = 0.75, main = "MS de vicia sobre soja")
+plot(FMS,KgMSMz, type = "s", xlab = "Días", ylab = "Kg MS vicia s/maíz", cex.lab = 0.75, cex.axis = 0.75, main = "MS de vicia sobre maíz")
+par(mfrow = c(1,1))
+```
+
+
+### Agua útil	
+```{r  , echo=FALSE, comment=NA, fig.dim=c(6,3), fig.align='center', fig.cap="Agua útil en el perfil hasta el metro de profundidad al inicio del cultivo de servicio y en cada una de las fechas de secado del mismo desde la siembra del cultivo de servicio"}
+FAU = c(0,176,190,209)
+AUSSj = c(138.17,43.09,81.01,91.14)
+AUSMz = c(135.58,75.93,100.48,73.35)
+par(mfrow = c(1,2))
+plot(FAU,AUSSj, type = "h", xlab = "Días después de la siembra (DDS)", ylab = "Agua útil (mm)", lwd = 8, xlim = c(0,250), ylim = c(0,150), cex.lab = 0.7, cex.axis = 0.7)
+plot(FAU,AUSMz, type = "h", xlab = "Días después de la siembra (DDS)", ylab = "Agua útil (mm)", lwd = 8, xlim = c(0,250), ylim = c(0,150), cex.lab = 0.7, cex.axis = 0.7)
+par(mfrow = c(1,1))
+```
+```{r  , echo=FALSE, include=FALSE, comment=NA}
+DDS = c(0,176,190,209)
+AU_Sj = c(138.17,43.09,81.01,91.14)
+AU_Mz = c(135.58,75.93,100.48,73.35)
+Lista_agua_útil = list("Días desde siembra" = c(0,176,190,209), "Agua útil sobre antecesor soja" = c(138.17,43.09,81.01,91.14), "Agua útil sobre antecesor maíz" = c(135.58,75.93,100.48,73.35))
+AUSj <- lm(DDS~AU_Sj)
+AUMz <- lm(DDS~AU_Mz)
+AUSj$mode
+AUMz$mode
+```
+
+
+DDS        | AU s/Sj            | AU s/Mz 
+-----------|--------------------|----------------
+0          |  138.17 mm         |  135.58 mm
+176        |  43.09 mm          |  75.93 mm
+190        |  81.01 mm          |  100.48 mm
+209        |  91.14 mm          |  73.35 mm
+
+
+\newpage
+
+### Análisis estadístico:
+
+```{r  , echo=FALSE, include=FALSE, comment=NA}
+Rendimiento = read.table("../../../../HP/Documents/R/RendViciaMaiz.txt",
+                         header = TRUE, dec = ",")
+Resultados = read.table("../../../../HP/Documents/R/RendViciaMaiz2.txt",
+                         header = TRUE, dec = ",")
+Res4 = read.table("../../../../HP/Documents/R/RendViciaMaiz4.txt",
+                         header = TRUE, dec = ",")
+Res5 = read.table("../../../../HP/Documents/R/RendViciaMaiz5.txt",
+                         header = TRUE, dec = ",")
+frs = aov(lm(FSecado~Rendimiento, Resultados))
+summary(frs)
+summary(lm(FSecado~Rendimiento, Resultados))
+
+```
+
+```{r , echo=FALSE, comment=NA, include=FALSE}
+by(Resultados[,c(2,5)], Resultados$Antecesor, FUN = summary)
+```
+
+```{r , echo=FALSE, comment=NA, warning=FALSE, fig.dim=c(7,4), fig.cap= "Matriz de correlaciones entre las variables estudiadas", cex.lab = 0.8, fig.align='left'}
+suppressMessages(suppressWarnings(library(corrplot)))
+Results <- Res5[,c(1,2,3,5,6)]
+M <- round(cor(Results),2)
+M
+corrplot.mixed(M)
+```
+
+\vspace{20pt}
+
+MS Vicia en función del antecesor (?)
+
+$R^2$:
+```{r , echo=FALSE, include=TRUE, comment=NA}
+round(cor(Res4$Antecesor, Res4$MSVicia),3)
+```
+```{r , echo=FALSE, include=FALSE, comment=NA}
+Res5 = read.table("../../../../HP/Documents/R/RendViciaMaiz5.txt",
+                         header = TRUE, dec = ",")
+lm(MSVicia~Antecesor, data = Res5)
+```
+$y = 1010 \cdot x + 1733$
+
+\vspace{20pt}
+
+Rendimiento en función de la fecha de secado
+
+$R^2$: 
+```{r , echo=FALSE, include=TRUE, comment=NA}
+round(cor(Res5$FSecado, Res5$Rendimiento, use = "everything", method = c("pearson", "kendall", "spearman")),3)
+
+```
+
+$y = -47,73 \cdot x + 16452,48$
+
+\vspace{20pt}
+
+Rendimiento en función de la MS de vicia
+
+$R^2$:
+```{r , echo=FALSE, include=TRUE, comment=NA}
+round(cor(Resultados$MSVicia, Resultados$Rendimiento),3)
+```
+```{r , echo=FALSE, include=FALSE, comment=NA}
+lm(Rendimiento~MSVicia, data = Resultados)
+```
+
+$y = 1472 \cdot x + 2522,132$
+
+
+
+### Respuesta a la fertilización
+
+Promedio de tratamientos:
+
+Fertilización  | Rendimiento
+---------------|-------------
+Fertilizado    | 7622,9
+Sin fertilizar | 6986,6
+
+Rendimiento en función de dos niveles de fertilización
+
+$R^2$: 
+```{r , echo=FALSE, include=TRUE, comment=NA, warning=FALSE}
+Res = read.table("../../../../HP/Documents/R/RendViciaMaiz3.txt",
+                         header = TRUE, dec = ",")
+Res$Fertilizante = as.numeric(Res$Fertilizante)
+cor(Res$Fertilizante, Res$Rendimiento)
+
+```
+
+
+```{r  , fig.dim=c(7,4.5), fig.align='center', fig.cap= "Resultados.", echo=FALSE, warning=FALSE, comment=NA}
+suppressMessages(suppressWarnings(library(tidyverse)))
+suppressMessages(suppressWarnings(library(ggplot2)))
+Rendimiento %>%
+   ggplot(aes(FSecado, Rendimiento,)) +
+  geom_boxplot() +
+  geom_point(alpha = 0.5,
+    aes(size=Rendimiento,
+                 colour=Antecesor)) + 
+  geom_smooth(method = lm, se = F) +
+  facet_wrap(~Fertilizante) +
+  labs(title = "Rendimientos según fecha de secado") +
+  theme_bw()
+
+```
+
+```{r  , echo=FALSE, comment=NA, warning=FALSE, fig.dim=c(7,4.5), fig.align='center', fig.cap= "Rendimientos de maíz según MS producida por la vicia."}
+Rendimiento %>%
+   ggplot(aes(MSVicia, Rendimiento,
+              colour = Antecesor)) +
+  geom_point(size=3, alpha = 0.5) + 
+  geom_smooth(method = lm, se = F) +
+  facet_wrap(~FSecado) +
+  labs(title = "Rendimientos de maíz según MS producida por la vicia") +
+  theme_bw()
+
+```
+
+
+```{r  , echo=FALSE, comment=NA, warning=FALSE, message=FALSE, fig.dim=c(5,2.8), fig.align='center', fig.cap= "Rendimientos de maíz en dos niveles de fertilización: 0 y 150 Kg/ha de urea granulada."}
+Res = read.table("../../../../HP/Documents/R/RendViciaMaiz3.txt",
+                         header = TRUE, dec = ",")
+   ggplot(data = Res, mapping = aes(Fertilizante, Rendimiento,
+              colour = Antecesor)) +
+  geom_point(size=3, alpha = 0.5) + 
+  geom_smooth(method = lm, se = F) +
+  labs(title = "Rendimientos de maíz según fertilización") +
+  theme_bw()
+
+```
+
+\newpage
+
+### Rendimientos	resultados	fotos			
+					
+estadística	explicación del método		resultados	gráficos
+```{r Rend, results='hide', echo=FALSE}
+Rendimientos = c(8042.3, 7401.9, 6470)
+Media = mean(Rendimientos)
+n = length(Rendimientos)
+desv.tip = sd(Rendimientos)
+var = var(Rendimientos)
+coef.var = desv.tip/Media
+```
+Resultados de rendimientos de *Zea mays*:
+
+En la campaña 20-21 al analizar los rendimientos de maíz promedio en las distintas fechas de secado se obtuvieron una **media** de $\overline{x}=$ `r round(Media, 1)` kg/ha, una **desviación típica** de $s=$ `r round(desv.tip, 1)` y un **coeficiente de variación** de $CV=$ `r round(coef.var, 4)`.
+Las diferencias son estadísticamente significativas.
+
+
+Fecha            |    Rendimiento
+-----------------|---------------------
+6/11/19          |     8042,3
+20/11/20         |     7401,9
+9/12/20          |     6470,0
+
+```{r  , echo=FALSE, comment=NA, warning=FALSE, fig.dim=c(4.5:3), fig.align='center', fig.cap= "Rendimientos promedio de maíz en cada fecha de secado (Kg MS/ha)."}
+x = c(1:3)
+y = c(8042.3, 7401.9, 6470)
+plot(x,y, xlab = "Fecha de secado", ylab = "Rendimiento (Kg/ha)", main = "Rendimientos de maíz promedio por fecha de secado", pch=20, col="black", bg ="yellow", cex=1.2, type="h", lty="solid", lwd=5, xlim=c(1,3), ylim=c(6200,8200), xaxp= c(1,3,2), yaxp= c(6200,8200,10), cex.lab = 0.7, cex.axis = 0.6, cex.main = 0.9, panel.first = grid())
+```
+					
+## Conclusiones:
+
+La campaña se caracterizó por un déficit hídrico en toda su extensión que repercutió negativamente en los rendimientos de los cultivos de servicio en menor medida, y en mayor medida de los estivales. 
+
+El mayor crecimiento inicial de la vicia sobre el antecesor soja puede deberse a una mejor calidad de siembra, ya que la misma puede ser dificultosa sobre rastrojo de maíz poco degradado.
+En la segunda fecha de secado se observó una relación entre la menor cantidad de agua útil en el perfil y la mayor cantidad de biomasa de vicia, que se explicaría por su mayor consumo de agua.
+Por otra parte, en la tercera fecha de secado, luego de las precipitaciones se midió una mayor cantidad de agua útil donde la producción de materia seca había sido mayor, Probablemente esto sea debido a una mayor capacidad de retención de agua de un suelo con mayor cantidad de materia orgánica y probablemente una mejor estructura. (Precipitaciones en diciembre, Gráficos x(MS) y x(Agua útil))
+
+Niveles más altos de producción de materia seca de vicia se relacionaron con mayores rendimientos de maíz. (Gráfico x)
+En este caso existe una coincidencia entre producción de materia seca de vicia y antecesor como se mencionó anteriormente. Probablemnte el efecto del antecesor se vea enmascarado por los volúmenes de materia seca. En años sucesivos posiblemente se pueda independizar el efecto de ambas variables.
+
+Se observó una correlación positiva entre rendimientos de maíz y fechas de secado (Tablas x y x; gráficos x y x).
+*El $R^2$ para esta relación, al analizar la totalidad de las muestras, presenta un ajuste bajo debido al número de variables en distintos niveles que entran en juego, por lo que aislando condiciones particulares este valor incrementa notablemente.*		
+*Evaluar si existe una relación lineal entre las variables, se obtuvieron los siguientes coeficientes de determinación R2 para cada una de las funciones de regresión lineal entre pares de variables La relación lineal obtenida no es significativa como para decir que la relación existente es lineal. Se crearon modelos lineales, obteniendo los menjores posibles*
+
+En cuanto a la respuesta a la fertilización se observa que incluso a niveles bajos (teniendo en cuenta los Kg de N disponibles en suelo a inicios del ensayo y los rendimientos), donde ésta debería ser mayor, si bien se encuentra una relación positiva entre variables, la misma es baja.
+Esta baja respuesta se podría asociar al aporte del cultivo de servicio, que se degrada en casi un 70 % durante el ciclo del cultivo estival.
+					
+Ante las condiciones del sitio del ensayo y las características meteorológicas del año evaluado, se podría concluir que existe una relación de mayor solidez entre la cantidad de MS producida por la vicia y el rendimiento del maíz, que la que existe entre éste y la fecha de secado de la vicia.
+
+La continuación del ensayo en diferentes años permitirá la inclusión, como variable de peso, de las precipitaciones durante el período entre la siembra del cultivo de servicio y la cosecha del maíz.	intentando predecir resultados bajo condiciones similares, como las representativas de la pampa húmeda de Argentina o extrapolar a otras zonas con condiciones variables.
